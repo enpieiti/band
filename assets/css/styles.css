@@ -1,0 +1,269 @@
+
+* {
+    box-sizing: border-box;
+}
+html {   
+    }
+body {
+    font-size: 15px;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.5;
+}
+h1, h2, h3, h4 {
+    font-family: "Segoe UI",Arial,sans-serif;
+}
+    /* common  */
+input, textarea, select, button {
+    font-family: inherit;
+    font-size: inherit;
+}   
+a {
+    text-decoration: none;  
+}
+/* start common */
+.container {
+    padding: 74px 16px 112px 16px;
+    width: 800px;
+    margin: 0 auto;
+    max-width: calc(100% - 48px);
+}
+.common-heading {
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 4px;
+}
+.common-desc {
+    font-style: italic;
+    opacity: 0.6;
+    margin-top: 15px;
+}
+.container-header {
+    text-align: center;
+}
+.btn {
+    border: none;
+    background: black;
+    color: white;
+    padding: 8px 16px;
+}
+.btn:hover {
+    background: #ccc;
+    color: black;
+    cursor: pointer;
+}
+/* end common */
+.nav {
+    height: 46px;
+    background: black;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+}
+.nav-item {
+    display: inline-block;
+    position: relative;
+}
+.nav-link {
+
+    color: white;
+    text-transform: uppercase;
+    display: block;
+    padding: 0 24px;
+    line-height: 46px;
+}
+.nav-link:hover,
+.subnav-link:hover {
+    background: #ccc;
+    color: black;
+}
+.subnav {
+    position: absolute;
+    min-width: 160px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    top: 100%;
+    display: none;
+}
+.subnav-link {
+    display: block;
+    padding: 8px 16px;
+    color: black;
+}    
+.nav-item:hover .subnav {
+    display: block;
+}
+.nav-icon {
+    color: white;
+    font-size: 18px;
+    line-height: 46px;
+    padding: 0 24px;
+}
+.nav-icon:hover {
+    background: #f44336;
+    cursor: pointer;
+}
+.slider {
+    margin-top: 46px;
+    background: url(/assets/img/slider.jpeg)  top center / cover no-repeat;
+    padding: 50%;
+    position: relative;
+}
+.slider-content {
+    position: absolute;
+    bottom: 47px;
+    text-align: center;
+    left: 0;
+    right: 0;
+    color: white;
+}
+.slider-heading {
+    font-weight: 400;
+    font-size: 24px;
+}
+.slider-desc {
+    font-weight: bolder;
+    margin-top: 25px;
+}
+/* start band */
+.band-desc {
+    text-align: justify;
+    line-height: 1.2;
+}
+.member-list {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 47px;
+}
+.member-item {
+    text-align: center;
+}
+.member-name {
+    margin: 15px 0;
+}
+.member-img {
+    display: block;
+    width: 144px;
+    height: 144px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+/* end band */
+/* start tour */
+.tour {
+    background: black;
+}
+.month-time {
+    background: white;
+    padding: 8px 16px ;
+    color: #757575;
+    border-bottom: 1px solid #ddd;
+}
+.soldout {
+    margin-left: 16px;
+    padding: 2px 8px;
+    background: #f44336 ;
+    color: white;
+}
+.quatity {
+    float: right;
+    width: 24px;height: 24px;
+    border-radius: 50%;
+    background: black;
+    text-align: center;
+    color: white;
+}
+.place-list {
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-around;
+    column-gap: 8px;
+}
+.place-body {
+    background: white;
+    padding: 16px;
+}
+.place-city {
+    font-weight: 700;
+}
+.place-date {
+    margin-top: 15px;
+    opacity: 0.6;
+}
+.place-desc {
+    margin: 15px 0;
+}
+.place-img {
+    height: 172px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* end tour */
+/* start contact */
+.contact-body {
+    margin-top: 47px;
+    display: flex;
+    justify-content: space-between;
+}
+.contact-icon {
+    margin-right: 10px;
+}
+.contact-desc {
+    font-size: 18px;
+}
+.input-info__message{
+    width: 100%;
+    margin-top: 10px;
+}
+.input-info,
+.input-info__message {
+    padding: 8px;
+    border: 1px solid #ccc;
+    line-height: 1.5;
+}
+.input-row {
+    display: flex;
+    gap: 16px;
+}
+.contact-btn {
+    margin-top: 16px;
+    float: right;
+}
+/* end contact */
+
+.footer-map {
+    background: url(/assets/img/map.jpg) top center / cover no-repeat;
+    padding: 50%;
+}
+.footer-body {
+    text-align: center;
+    padding: 64px 0;
+}
+.social {
+    text-align: center;
+    margin-bottom: 15px;
+}    
+.footer-icon,
+.w3 {
+    font-size: 20px;
+    color: black;
+    opacity: 0.6;
+    text-align: center;
+}
+.footer-icon:hover {
+    opacity: 0.4;
+}
+.w3 a{
+    text-decoration: underline;
+    color: black;
+    font-size: 15px;
+}
