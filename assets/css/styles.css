@@ -8,6 +8,8 @@ body {
     font-size: 15px;
     font-family: 'Lato', sans-serif;
     line-height: 1.5;
+    /* width: 100vh; */
+
 }
 h1, h2, h3, h4 {
     font-family: "Segoe UI",Arial,sans-serif;
@@ -61,6 +63,8 @@ a {
     right: 0;
     top: 0;
     z-index: 1;
+    overflow: hidden; /* ẩn khi ở sang mobile */
+    
 }
 .nav-content {
     display: flex;
@@ -99,12 +103,14 @@ a {
 .nav-item:hover .subnav {
     display: block;
 }
+.nav-icon-mobile,
 .nav-icon {
     color: white;
     font-size: 18px;
     line-height: 46px;
     padding: 0 24px;
 }
+.nav-icon-mobile:hover,
 .nav-icon:hover {
     background: #f44336;
     cursor: pointer;
@@ -137,18 +143,23 @@ a {
     line-height: 1.2;
 }
 .member-list {
-    display: flex;
-    justify-content: space-around;
+    /* display: flex; */
+    /* justify-content: space-around; */
+  
     margin-top: 47px;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
 }
 .member-item {
     text-align: center;
+    /* align-items: center; */
+    /* width: 33.33%; */
 }
 .member-name {
     margin: 15px 0;
 }
 .member-img {
-    display: block;
+    display: inline-block;
     width: 144px;
     height: 144px;
     border-radius: 4px;
@@ -182,8 +193,11 @@ a {
 .place-list {
     margin-top: 32px;
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     column-gap: 8px;
+}
+.place-item {
+    width: 33.33%;
 }
 .place-body {
     background: white;
@@ -200,7 +214,7 @@ a {
     margin: 15px 0;
 }
 .place-img {
-    height: 172px;
+    height: 184px;
     width: 100%;
     object-fit: cover;
     display: block;
@@ -211,8 +225,13 @@ a {
 /* start contact */
 .contact-body {
     margin-top: 47px;
-    display: flex;
-    justify-content: space-between;
+    /* display: flex; */
+    /* dùng flex sẽ bị dư 1 khoảng khi chuyển qua mobile  */
+    /* justify-content: space-between; */
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    /* grid-template-rows: 1fr 1fr;  */
+    overflow: hidden;
 }
 .contact-icon {
     margin-right: 10px;
@@ -221,14 +240,18 @@ a {
     font-size: 18px;
 }
 .input-info__message{
-    width: 100%;
+    /* width: 100%; */
     margin-top: 10px;
+}
+.common-heading {
+    text-align: center;
 }
 .input-info,
 .input-info__message {
     padding: 8px;
     border: 1px solid #ccc;
     line-height: 1.5;
+    width: 100%;
 }
 .input-row {
     display: flex;
@@ -239,7 +262,7 @@ a {
     float: right;
 }
 /* end contact */
-
+/* start footer */
 .footer-map {
     background: url(/assets/img/map.jpg) top center / cover no-repeat;
     padding: 50%;
@@ -266,4 +289,62 @@ a {
     text-decoration: underline;
     color: black;
     font-size: 15px;
+}
+/* end footer */
+
+/* css responsive */
+/* PC */
+@media (min-width: 1024px) {
+    .nav-icon-mobile  {
+        display: none;
+    }
+    
+}
+
+
+
+/* mobile */
+@media (max-width: 740px) {
+    body {
+        /* width: 100vh; */
+    }
+    .header {
+        /* overflow: hidden; */
+    }
+    
+    .nav-item {
+        display: block;
+    }
+    
+    .nav-icon {
+        display: none;
+    }
+    
+    .place-list,
+    .member-list {
+        display: block;
+    }
+    .member-img {
+        width: 205px;
+    height: 205px;
+    }
+    /* .place-img {
+        height: 286px;
+    } */
+    .place-item {
+        width: 100%;
+    }
+    .place-item +  .place-item {
+        margin-top: 15px;
+    }
+    .contact-body {
+        display: block;
+    }
+    .input-row {
+        display: block;
+        width: 180px;
+    }
+    .contact-btn {
+        margin-left: 16px;
+    }
 }
